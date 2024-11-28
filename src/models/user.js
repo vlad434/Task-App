@@ -51,6 +51,19 @@ const userSchema = new mongoose.Schema({
   ],
 });
 
+userSchema.methods.toJSON = function () {
+  const user = this;
+
+  //transforma userul curent(this) intr-un obiect
+  const userObject = user.toObject();
+
+  //sterge campurile de pe acel obiect
+  delete userObject.password;
+  delete userObject.tokens;
+
+  return userObject;
+};
+
 //methods sunt accesibile pe instante
 userSchema.methods.generateAuthToken = async function () {
   const user = this;
