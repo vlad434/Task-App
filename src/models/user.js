@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const Task = require("./task");
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -49,6 +50,12 @@ const userSchema = new mongoose.Schema({
       },
     },
   ],
+});
+
+userSchema.virtual("tasks", {
+  ref: "Task",
+  localField: "_id", //Reprezintă câmpul din modelul curent (User) care este utilizat pentru a face legătura
+  foreignField: "owner", //Reprezintă câmpul din modelul referit (Task) care conține valoarea folosită pentru a crea legătura.
 });
 
 userSchema.methods.toJSON = function () {
@@ -102,6 +109,15 @@ userSchema.pre("save", async function (next) {
   }
 
   next();
+});
+
+userSchema.pre("remove", async function (next) {
+  try {
+    await Task.deleteMany({ owner: this._id });
+    next();
+  } catch (error) {
+    next(error);
+  }
 });
 
 const User = mongoose.model("User", userSchema);

@@ -1,6 +1,7 @@
 const express = require("express");
 const User = require("../models/user");
 const auth = require("../middleware/auth");
+const Task = require("../models/task");
 const router = new express.Router();
 
 //create users
@@ -89,13 +90,14 @@ router.patch("/users/me", auth, async (req, res) => {
 //delete user
 router.delete("/users/me", auth, async (req, res) => {
   try {
-    //remove e metoda mongoose
-    // await req.user.remove();
-    await User.deleteOne({ _id: req.user._id });
+    await Task.deleteMany({ owner: req.user._id });
+
+    await User.findByIdAndDelete(req.user._id);
 
     res.send(req.user);
   } catch (error) {
-    res.status(500).send();
+    console.error("Eroare la ștergerea utilizatorului:", error);
+    res.status(500).send({ error: error.message });
   }
 });
 
