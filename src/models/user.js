@@ -51,6 +51,9 @@ const userSchema = new mongoose.Schema(
         },
       },
     ],
+    avatar: {
+      type: Buffer,
+    },
   },
   {
     timestamps: true,
@@ -72,6 +75,7 @@ userSchema.methods.toJSON = function () {
   //sterge campurile de pe acel obiect
   delete userObject.password;
   delete userObject.tokens;
+  delete userObject.avatar;
 
   return userObject;
 };

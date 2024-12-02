@@ -6,19 +6,6 @@ const taskRouter = require("./routers/task");
 const app = express();
 const port = process.env.port || 3000;
 
-//metoda care ruleaza intre un nou request si run route handler
-// app.use((req, res, next) => {
-// if (req.method === "GET") {
-//   res.send("GET requests are disabled");
-// } else {
-//   next();
-// }
-// res.status(503).send("The site is under maintenance...");
-
-// console.log(req.method, req.path);
-// next(); //permite lui route handler sa ruleze
-// });
-
 app.use(express.json()); //parseaza automat json-ul care vine; poate fi accesat prin req.body
 app.use(userRouter);
 app.use(taskRouter);
