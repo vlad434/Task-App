@@ -1,0 +1,61 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task App</title>
+  </head>
+  <body>
+    {{>header}}
+
+    <div class="container">
+            <div >
+                <form  autocomplete="false" id="login-form">
+                    <p>
+                        <label><b>Email</b></label>
+                        <input autocomplete="off" id="login-email" type="text"></p>
+                    <p>
+                        <label><b>Password</b></label>
+                        <input id="login-password" type="password"></p>
+                    <p>
+                        <button>Login</button></p>
+                </form>
+            </div>
+
+            <div>
+                <form  autocomplete="false" id="signup-form">
+                    <p>
+                        <label autocomplete="off"><b>Name</b></label>
+                        <input autocomplete="off" id="signup-name" type="text"></p>
+                    <p>
+                        <label><b>Age</b></label>
+                        <input id="signup-age" type="number"></p>
+                    <p>
+                        <label autocomplete="off"><b>Email</b></label>
+                        <input autocomplete="off" id="signup-email" type="text"></p>
+                    <p>
+                        <label><b>Password</b></label>
+                        <input id="signup-password" type="password"></p>
+                    <p>
+                        <button>Register</button></p>
+                </form>
+            </div>
+
+            {{!-- <div >
+                <img src="./img/moustache.png" alt="moustache">
+                <h5  >Handlebars</h5>
+
+                <img src="./img/mongodb.png" alt="mongodb">
+
+                <img src="./img/express.png" alt="express">
+
+                <img src="./img/node.png" alt="node">
+
+
+            </div> --}}
+        </div>
+    </div>
+
+    {{>footer}}
+    <script src="js/app.js"></script>
+  </body>
+</html>

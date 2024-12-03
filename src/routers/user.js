@@ -160,4 +160,11 @@ router.get("/users/:id/avatar", async (req, res) => {
   }
 });
 
+router.get("", (req, res) => {
+  res.render("index", {
+    title: "Title test",
+    name: "Vladone",
+  });
+});
+
 module.exports = router;
