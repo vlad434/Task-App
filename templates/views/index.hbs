@@ -2,51 +2,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/styles.css" /> 
+    <link rel="stylesheet" href="/css/output.css" /> 
     <title>Task App</title>
   </head>
-  <body>
+  <body class="m-5 flex items-center justify-center flex-col relative">
     {{>header}}
 
-    <div class="container">
+    <div class="mt-20 flex space-x-3">
             {{!-- start login --}}
-            <div>
-                <form id="login-form">
-                    <p>
-                        <label for="login-email"><b>Email</b></label>
-                        <input id="login-email" type="text"></p>
-                    <p>
-                        <label for="login-password"><b>Password</b></label>
-                        <input id="login-password" type="password"></p>
-                    <p>
-                        <button>Login</button></p>
+            <div class="bg-emerald-600/60 p-5 rounded border border-solid border-emerald-600 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]">
+                <form id="login-form" class="h-full w-full flex flex-col justify-between items-center">
+                    <div class="space-y-3">
+                        <div class="flex flex-col justify-between items-start">
+                            <label for="login-email"><b>Email</b></label>
+                            <input id="login-email" class="rounded px-2" type="text">
+                         </div>
+                        <div class="flex flex-col justify-between items-start">
+                            <label for="login-password"><b>Password</b></label>
+                            <input id="login-password" class="rounded px-2" type="password">
+                        </div>
+                    </div>
+                    <button class="px-5 w-2/3 py-0.5 border border-solid rounded-md hover:bg-emerald-400 hover:text-white hover:border-emerald-400 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]">Login</button>
                 </form>
             </div>
             {{!-- end login --}}
 
             {{!-- start register --}}
-            <div>
-                <form id="signup-form">
-                    <p>
-                        <label for="signup-name"><b>Name</b></label>
-                        <input id="signup-name" type="text"></p>
-                    <p>
-                        <label for="signup-age"><b>Age</b></label>
-                        <input id="signup-age" type="number"></p>
-                    <p>
-                        <label for="signup-email"><b>Email</b></label>
-                        <input id="signup-email" type="text"></p>
-                    <p>
-                        <label for="signup-password"><b>Password</b></label>
-                        <input id="signup-password" type="password"></p>
-                    <p>
-                        <button>Register</button></p>
+            <div class="bg-emerald-600/60 p-5 rounded border border-solid border-emerald-600 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]">
+                <form id="signup-form" class="h-full w-full flex flex-col justify-between items-center">
+                    <div class="space-y-3">
+                        <div class="flex flex-col justify-between items-start">
+                            <label for="signup-name"><b>Name</b></label>
+                            <input class="rounded px-2" id="signup-name" type="text">
+                        </div>
+                        <div class="flex flex-col justify-between items-start">
+                            <label for="signup-age"><b>Age</b></label>
+                            <input class="rounded px-2" id="signup-age" type="number">
+                        </div>
+                        <div class="flex flex-col justify-between items-start">
+                            <label for="signup-email"><b>Email</b></label>
+                            <input class="rounded px-2" id="signup-email" type="text">
+                        </div>
+                        <div class="flex flex-col justify-between items-start">
+                            <label for="signup-password"><b>Password</b></label>
+                            <input class="rounded px-2" id="signup-password" type="password">
+                        </div>
+                    </div> 
+                    
+                    <button  class="px-5 w-2/3 py-0.5 border border-solid rounded-md hover:bg-emerald-400 hover:text-white hover:border-emerald-400 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]">Register</button> 
                 </form>
             </div>
             {{!-- end register --}}
- 
-        </div>
-    </div>
+    </div> 
 
     {{>footer}}
     <script src="js/app.js"></script>
