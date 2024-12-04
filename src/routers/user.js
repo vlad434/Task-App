@@ -63,7 +63,7 @@ router.post("/users/logoutAll", auth, async (req, res) => {
   }
 });
 
-//get all users
+//get current user
 router.get("/users/me", auth, async (req, res) => {
   res.send(req.user);
 });
@@ -158,13 +158,6 @@ router.get("/users/:id/avatar", async (req, res) => {
   } catch (error) {
     res.status(404).send();
   }
-});
-
-router.get("", (req, res) => {
-  res.render("index", {
-    title: "Title test",
-    name: "Vladone",
-  });
 });
 
 module.exports = router;

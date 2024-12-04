@@ -3,6 +3,7 @@ const router = new express.Router();
 const auth = require("../middleware/auth");
 const Task = require("../models/task");
 
+//add task
 router.post("/tasks", auth, async (req, res) => {
   const task = new Task({
     ...req.body,
@@ -43,23 +44,6 @@ router.get("/tasks", auth, async (req, res) => {
       },
     });
     res.send(req.user.tasks);
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
-//get individual task
-router.get("/tasks/:id", auth, async (req, res) => {
-  const _id = req.params.id;
-
-  try {
-    const task = await Task.findOne({ _id, owner: req.user._id });
-
-    if (!task) {
-      return res.status(404).send();
-    }
-
-    res.send(task);
   } catch (error) {
     res.status(500).send(error);
   }

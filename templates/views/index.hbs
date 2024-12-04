@@ -2,56 +2,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" /> 
     <title>Task App</title>
   </head>
   <body>
     {{>header}}
 
     <div class="container">
-            <div >
-                <form  autocomplete="false" id="login-form">
+            {{!-- start login --}}
+            <div>
+                <form id="login-form">
                     <p>
-                        <label><b>Email</b></label>
-                        <input autocomplete="off" id="login-email" type="text"></p>
+                        <label for="login-email"><b>Email</b></label>
+                        <input id="login-email" type="text"></p>
                     <p>
-                        <label><b>Password</b></label>
+                        <label for="login-password"><b>Password</b></label>
                         <input id="login-password" type="password"></p>
                     <p>
                         <button>Login</button></p>
                 </form>
             </div>
+            {{!-- end login --}}
 
+            {{!-- start register --}}
             <div>
-                <form  autocomplete="false" id="signup-form">
+                <form id="signup-form">
                     <p>
-                        <label autocomplete="off"><b>Name</b></label>
-                        <input autocomplete="off" id="signup-name" type="text"></p>
+                        <label for="signup-name"><b>Name</b></label>
+                        <input id="signup-name" type="text"></p>
                     <p>
-                        <label><b>Age</b></label>
+                        <label for="signup-age"><b>Age</b></label>
                         <input id="signup-age" type="number"></p>
                     <p>
-                        <label autocomplete="off"><b>Email</b></label>
-                        <input autocomplete="off" id="signup-email" type="text"></p>
+                        <label for="signup-email"><b>Email</b></label>
+                        <input id="signup-email" type="text"></p>
                     <p>
-                        <label><b>Password</b></label>
+                        <label for="signup-password"><b>Password</b></label>
                         <input id="signup-password" type="password"></p>
                     <p>
                         <button>Register</button></p>
                 </form>
             </div>
-
-            {{!-- <div >
-                <img src="./img/moustache.png" alt="moustache">
-                <h5  >Handlebars</h5>
-
-                <img src="./img/mongodb.png" alt="mongodb">
-
-                <img src="./img/express.png" alt="express">
-
-                <img src="./img/node.png" alt="node">
-
-
-            </div> --}}
+            {{!-- end register --}}
+ 
         </div>
     </div>
 

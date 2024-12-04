@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" /> 
+    <title>Task App</title>
+  </head>
+  <body>
+    {{>header}}
+
+    <div id="container">
+        {{!-- start presentation section --}}
+        <div>
+             <img id="userAvatar" class="shadow avatarImage" onerror='defaultImg()'>
+            <label for="user_name">Name:</label><span id="user_name"></span>
+            <label for="user_email">Email:</label><span id="user_email"></span>
+            <label for="user_age">Age:</label><span id="user_age"></span>
+        </div>   
+        {{!-- end presentation section --}}
+        
+        {{!-- start update section --}}
+        <div>
+          <form id="update-form">
+                    <p>
+                        <label for="update-name"><b>Name</b></label>
+                        <input id="update-name" type="text"></p>
+                    <p>
+                    <p>
+                        <label for="update-age"><b>Age</b></label>
+                        <input id="update-age" type="text"></p>
+                    <p>
+                    <p>
+                        <label for="update-email"><b>Email</b></label>
+                        <input id="update-email" type="text"></p>
+                    <p>
+                        <label for="update-password"><b>Password</b></label>
+                        <input id="update-password" type="password"></p>
+                    <p>
+                        <button>Update</button>
+                    </p>
+          </form>
+        </div>   
+        {{!-- end update section --}}
+
+        {{!-- start CRUD section --}}
+        <div>
+          <button id="logout-current-device">Logout this Device</button>
+          <button id="logout-all-devices">Logout all Devices</button>
+          <button id="delete-my-account">Delete my account</button>
+          <form>
+                        <div>
+                            <input type="file" id="avatar">
+                        </div>
+                        <div >
+                            <button id="uploadButton">Upload Avatar</button>
+                        </div>
+                    </form>
+          <button id="delete-my-avatar">Delete my Avatar</button>
+        </div>   
+        {{!-- end CRUD section --}}
+    </div>
+
+    {{>footer}}
+    <script src="js/user.js"></script>
+  </body>
+</html>
