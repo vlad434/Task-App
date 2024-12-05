@@ -69,9 +69,8 @@ updateForm.addEventListener("submit", (e) => {
     body: JSON.stringify(newUser),
   })
     .then((res) => res.json())
-    .then((data) => console.log(data))
+    .then((data) => init())
     .catch((err) => alert(err));
-  console.log("update with new data", newUser);
 });
 
 //Logout user

@@ -30,14 +30,14 @@ app.get("", (req, res) => {
   });
 });
 
-app.get("/user", auth, (req, res) => {
+app.get("/user", (req, res) => {
   res.render("user", {
     title: "User - CRUD Operations",
     name: "Vladone",
   });
 });
 
-app.get("/task", auth, (req, res) => {
+app.get("/task", (req, res) => {
   res.render("task", {
     title: "Tasks",
     name: "Vladone",

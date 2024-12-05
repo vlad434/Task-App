@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="/css/output.css" /> 
     <title>Task App</title>
 </head>
-  <body  class="m-5 flex items-center justify-center flex-col">
+  <body class="m-5 flex items-center justify-center flex-col">
     {{>header}}
 
-    <div class="mt-10 flex space-x-3">
+    <div class="mt-10 flex space-x-6">
         {{!-- start presentation section --}}
         <div class="bg-emerald-600/60 p-5 rounded flex items-center justify-center border border-solid border-emerald-600 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]">
             <img id="userAvatar" class="shadow avatarImage" onerror='defaultImg()'>
@@ -53,7 +53,7 @@
     </div>
 
      {{!-- start CRUD section --}}
-    <div class="flex bg-emerald-600/60 p-5 rounded border border-solid border-emerald-600 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]">
+    <div class="flex bg-emerald-600/60 p-5 rounded border border-solid mt-3 border-emerald-600 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]">
           <button class="px-3 py-0 border border-solid rounded-md hover:bg-emerald-400 hover:text-white hover:border-emerald-400 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]" id="logout-current-device">Logout this Device</button>
           <button class="px-3 py-0 border border-solid rounded-md hover:bg-emerald-400 hover:text-white hover:border-emerald-400 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]" id="logout-all-devices">Logout all Devices</button>
           <button class="px-3 py-0 border border-solid rounded-md hover:bg-emerald-400 hover:text-white hover:border-emerald-400 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]" id="delete-my-account">Delete my account</button>

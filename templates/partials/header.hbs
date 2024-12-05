@@ -1,5 +1,5 @@
 <header class="space-y-4">
-  <h1 class="text-4xl font-bold">{{title}}</h1>
+  <h1 class="text-4xl font-bold flex items-center justify-center">{{title}}</h1>
 
   <nav class="flex items-end justify-center gap-3">
     <a
@@ -16,10 +16,3 @@
     >My Tasks</a>
   </nav>
 </header>
-
-<script>
-  const token = localStorage.getItem("authToken"); const currentPath =
-  window.location.pathname; const protectedRoutes = ["/user", "/task"]; if
-  (!token && protectedRoutes.includes(currentPath)) { window.location.href =
-  "/*"; }
-</script>
