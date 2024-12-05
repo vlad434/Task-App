@@ -16,3 +16,10 @@
     >My Tasks</a>
   </nav>
 </header>
+
+<script>
+  const token = localStorage.getItem("authToken"); const currentPath =
+  window.location.pathname; const protectedRoutes = ["/user", "/task"]; if
+  (!token && protectedRoutes.includes(currentPath)) { window.location.href =
+  "/*"; }
+</script>

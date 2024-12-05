@@ -30,11 +30,14 @@ const renderTasks = (tasks) => {
 
   tasks.forEach((task) => {
     const taskDiv = document.createElement("div");
-    taskDiv.classList.add("task-item");
+    taskDiv.classList.add("flex");
     taskDiv.innerHTML = `
             <h3>${task.description}</h3>
             <p>${new Date(task.createdAt).toLocaleString()}</p>
+            <button onclick="editTask()" class="px-5 py-0.5 border border-solid rounded-md hover:bg-emerald-400 hover:text-white hover:border-emerald-400 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]">Edit</button>
+            <button onclick="deleteTask()" class="px-5 py-0.5 border border-solid rounded-md hover:bg-emerald-400 hover:text-white hover:border-emerald-400 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]">Del</button>
             <input type="checkbox" ${task.completed ? "checked" : ""}>
+
         `;
 
     taskContainer.append(taskDiv);
@@ -63,4 +66,10 @@ taskForm.addEventListener("submit", (e) => {
     });
 });
 
-//update task
+const deleteTask = (e) => {
+  console.log(" ");
+};
+
+const editTask = () => {
+  console.log("edit task");
+};

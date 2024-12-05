@@ -140,19 +140,19 @@ deleteMyAccount.addEventListener("click", (e) => {
 });
 
 //upload avatar
-uploadAvatar.addEventListener("click", (e) => {
-  e.preventDefault();
-  // console.log("upload avatar");
-  // const token = localStorage.getItem("authToken");
-  // fetch("/users/me/avatar", {
-  //   method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     Authorization: `Bearer ${token}`,
-  //   },
-  // })
-  //   .then((res) => res.json())
-  //   .then((data) => console.log(data));
-});
+// uploadAvatar.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   // console.log("upload avatar");
+//   // const token = localStorage.getItem("authToken");
+//   // fetch("/users/me/avatar", {
+//   //   method: "POST",
+//   //   headers: {
+//   //     "Content-Type": "application/json",
+//   //     Authorization: `Bearer ${token}`,
+//   //   },
+//   // })
+//   //   .then((res) => res.json())
+//   //   .then((data) => console.log(data));
+// });
 
 //delete avatar

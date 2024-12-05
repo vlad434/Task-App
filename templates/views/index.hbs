@@ -1,3 +1,4 @@
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -5,7 +6,7 @@
     <link rel="stylesheet" href="/css/output.css" /> 
     <title>Task App</title>
   </head>
-  <body class="m-5 flex items-center justify-center flex-col relative">
+  <body class="m-5 flex items-center justify-center flex-col">
     {{>header}}
 
     <div class="mt-20 flex space-x-3">
@@ -53,6 +54,15 @@
                 </form>
             </div>
             {{!-- end register --}}
+
+             {{!-- start tools --}}
+            <div class="flex flex-col items-center p-5 rounded border border-solid border-emerald-600 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]">
+                 <img class="w-52 h-28" src="/images/nodepng.png" alt="node">
+                 <img class="w-52 h-16" src="/images/expressjs.png" alt="express">
+                 <img class="w-52 h-16" src="/images/mongo.png" alt="mongo">
+                 <img class="w-48 h-32" src="/images/handlebarspng.png" alt="handlebars">
+            </div>
+            {{!-- end tools --}}
     </div> 
 
     {{>footer}}

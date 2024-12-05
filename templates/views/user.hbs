@@ -5,61 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/output.css" /> 
     <title>Task App</title>
-  </head>
-  <body>
+</head>
+  <body  class="m-5 flex items-center justify-center flex-col">
     {{>header}}
 
-    <div id="container">
+    <div class="mt-10 flex space-x-3">
         {{!-- start presentation section --}}
-        <div>
-             <img id="userAvatar" class="shadow avatarImage" onerror='defaultImg()'>
-            <label for="user_name">Name:</label><span id="user_name"></span>
-            <label for="user_email">Email:</label><span id="user_email"></span>
-            <label for="user_age">Age:</label><span id="user_age"></span>
+        <div class="bg-emerald-600/60 p-5 rounded flex items-center justify-center border border-solid border-emerald-600 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]">
+            <img id="userAvatar" class="shadow avatarImage" onerror='defaultImg()'>
+            <div class="flex flex-col items-center justify-center space-y-2">
+                <span class="font-bold text-base border border-solid rounded px-2 py-0 border-black" id="user_name"></span>
+                <span class="font-bold text-base border border-solid rounded px-2 py-0 border-black" id="user_email"></span>
+                <div class="font-bold text-base border border-solid rounded px-2 py-0 border-black">
+                    <label for="">Age:</label>
+                    <span id="user_age"></span>
+                </div>
+            </div>
         </div>   
         {{!-- end presentation section --}}
         
         {{!-- start update section --}}
-        <div>
-          <form id="update-form">
-                    <p>
-                        <label for="update-name"><b>Name</b></label>
-                        <input id="update-name" type="text"></p>
-                    <p>
-                    <p>
-                        <label for="update-age"><b>Age</b></label>
-                        <input id="update-age" type="text"></p>
-                    <p>
-                    <p>
-                        <label for="update-email"><b>Email</b></label>
-                        <input id="update-email" type="text"></p>
-                    <p>
-                        <label for="update-password"><b>Password</b></label>
-                        <input id="update-password" type="password"></p>
-                    <p>
-                        <button>Update</button>
-                    </p>
+        <div class="bg-emerald-600/60 p-5 rounded border border-solid border-emerald-600 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]">
+          <form id="update-form" class="h-full w-full flex flex-col justify-between items-center space-y-3">
+                    <div class="space-y-3">
+                        <div class="flex flex-col justify-between items-start">
+                            <label for="update-name"><b>Name</b></label>
+                            <input class="rounded px-2" id="update-name" type="text">
+                        </div>
+                        <div class="flex flex-col justify-between items-start">
+                            <label for="update-age"><b>Age</b></label>
+                            <input class="rounded px-2" id="update-age" type="text">
+                        </div>
+                        <div class="flex flex-col justify-between items-start">
+                            <label for="update-email"><b>Email</b></label>
+                            <input class="rounded px-2" id="update-email" type="text">
+                        </div>
+                        <div class="flex flex-col justify-between items-start">
+                            <label for="update-password"><b>Password</b></label>
+                            <input class="rounded px-2" id="update-password" type="password">
+                        </div>
+                    </div>
+                    
+                    <button class="px-5 w-2/3 py-0.5 border border-solid rounded-md hover:bg-emerald-400 hover:text-white hover:border-emerald-400 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]">Update</button>
           </form>
         </div>   
         {{!-- end update section --}}
-
-        {{!-- start CRUD section --}}
-        <div>
-          <button id="logout-current-device">Logout this Device</button>
-          <button id="logout-all-devices">Logout all Devices</button>
-          <button id="delete-my-account">Delete my account</button>
-          <form>
-                        <div>
-                            <input type="file" id="avatar">
-                        </div>
-                        <div >
-                            <button id="uploadButton">Upload Avatar</button>
-                        </div>
-                    </form>
-          <button id="delete-my-avatar">Delete my Avatar</button>
-        </div>   
-        {{!-- end CRUD section --}}
     </div>
+
+     {{!-- start CRUD section --}}
+    <div class="flex bg-emerald-600/60 p-5 rounded border border-solid border-emerald-600 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]">
+          <button class="px-3 py-0 border border-solid rounded-md hover:bg-emerald-400 hover:text-white hover:border-emerald-400 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]" id="logout-current-device">Logout this Device</button>
+          <button class="px-3 py-0 border border-solid rounded-md hover:bg-emerald-400 hover:text-white hover:border-emerald-400 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]" id="logout-all-devices">Logout all Devices</button>
+          <button class="px-3 py-0 border border-solid rounded-md hover:bg-emerald-400 hover:text-white hover:border-emerald-400 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]" id="delete-my-account">Delete my account</button>
+          <form class="h-full w-full flex flex-col justify-between items-center">
+                <div>
+                    <input type="file" id="avatar">
+                </div>
+                
+                <div >
+                    <button class="px-3 py-0 border border-solid rounded-md hover:bg-emerald-400 hover:text-white hover:border-emerald-400 shadow-[4px_4px_2px_0px_rgba(0,0,0,0.75)]" id="uploadButton">Upload Avatar</button>
+                </div>
+            </form>
+            <button id="delete-my-avatar">Delete my Avatar</button>
+    </div>   
+    {{!-- end CRUD section --}}
 
     {{>footer}}
     <script src="js/user.js"></script>

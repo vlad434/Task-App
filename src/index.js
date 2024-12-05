@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const hbs = require("hbs");
+const auth = require("./middleware/auth");
 require("./db/mongoose");
 const userRouter = require("./routers/user");
 const taskRouter = require("./routers/task");
@@ -29,21 +30,21 @@ app.get("", (req, res) => {
   });
 });
 
-app.get("/user", (req, res) => {
+app.get("/user", auth, (req, res) => {
   res.render("user", {
     title: "User - CRUD Operations",
     name: "Vladone",
   });
 });
 
-app.get("/task", (req, res) => {
+app.get("/task", auth, (req, res) => {
   res.render("task", {
     title: "Tasks",
     name: "Vladone",
   });
 });
 
-app.use((req, res) => {
+app.use("/*", (req, res) => {
   res.status(404).render("404", {
     title: "404",
     errorMessage: "Page not found.",
