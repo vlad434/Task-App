@@ -22,48 +22,31 @@ const renderTasks = (tasks) => {
   taskContainer.innerHTML = "";
 
   if (tasks.length === 0) {
-    taskContainer.innerHTML = `<p class="text-gray-500">No tasks available yet</p>`;
+    taskContainer.innerHTML = `<p class="no-tasks-message">No tasks available yet</p>`;
     return;
   }
 
   tasks.forEach((task) => {
     const taskRow = document.createElement("div");
-    taskRow.classList.add(
-      "flex",
-      "justify-between",
-      "items-center",
-      "border",
-      "border-gray-300",
-      "rounded-md",
-      "px-4",
-      "py-2",
-      "shadow-sm"
-    );
+    taskRow.className = "task-row";
 
     taskRow.innerHTML = `
       <div class="task-content">
-        <h3 class="font-medium" data-task-id="${task._id}">${
+        <h3 class="task-title" data-task-id="${task._id}">${
       task.description
     }</h3>
-        <p class="text-sm text-gray-500">${new Date(
-          task.createdAt
-        ).toLocaleString()}</p>
+        <p class="task-date">${new Date(task.createdAt).toLocaleString()}</p>
       </div>
-      <div class="flex items-center space-x-2"> 
-        <button 
-          class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600"
-           onclick="editTask('${task._id}')">
-          Edit
-        </button>
-        <button 
-          class="px-3 py-1 bg-red-500 text-white rounded-md hover:bg-red-600"
-          onclick="deleteTask('${task._id}')">
-          Delete
-        </button>
-        <input 
-          type="checkbox" 
-          ${task.completed ? "checked" : ""}
-          onchange="toggleTaskCompletion('${task._id}', this.checked)" />
+      <div class="task-actions">
+        <button class="btn edit-btn" onclick="editTask('${
+          task._id
+        }')">Edit</button>
+        <button class="btn delete-btn" onclick="deleteTask('${
+          task._id
+        }')">Delete</button>
+        <input type="checkbox" class="task-checkbox" ${
+          task.completed ? "checked" : ""
+        } onchange="toggleTaskCompletion('${task._id}', this.checked)" />
       </div>
     `;
 
@@ -117,28 +100,11 @@ const editTask = (taskId) => {
   const inputField = document.createElement("input");
   inputField.type = "text";
   inputField.value = currentDescription;
-  inputField.classList.add(
-    "px-3",
-    "py-1",
-    "border",
-    "border-gray-300",
-    "rounded-md",
-    "shadow-sm",
-    "focus:outline-none",
-    "focus:ring-2",
-    "focus:ring-emerald-400"
-  );
+  inputField.className = "edit-input";
 
   const saveButton = document.createElement("button");
   saveButton.textContent = "Save";
-  saveButton.classList.add(
-    "ml-2",
-    "px-4",
-    "py-2",
-    "bg-red-500",
-    "text-white",
-    "rounded-md"
-  );
+  saveButton.className = "btn save-btn";
 
   saveButton.addEventListener("click", () => {
     const newDescription = inputField.value;
